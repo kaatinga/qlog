@@ -25,7 +25,7 @@ func (l level) String() string {
 	}
 }
 
-func NewStdLogger() Logger {
+func New() Logger {
 	return &defaultLogger{}
 }
 

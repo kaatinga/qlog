@@ -13,7 +13,7 @@ The package can be used as a default logger for helper packages.
 ### Usage Example
 
 ```go
-logger := qlog.NewStdLogger()
+logger := qlog.New()
 logger.Debugf("starting app on port %d", 8080)
 logger.Errorf("failed to connect: %v", err)
 ```
