@@ -25,6 +25,7 @@ func (l level) String() string {
 	}
 }
 
+// New creates a new instance of the qlog logger.
 func New() Logger {
 	return &defaultLogger{}
 }
@@ -37,8 +38,11 @@ func (l *defaultLogger) log(lvl level, msg string, args ...any) {
 		output = os.Stdout
 	}
 	formatted := "[" + lvl.String() + "] " + fmt.Sprintf(msg, args...)
-	output.Write([]byte(formatted))
+	_, _ = output.Write([]byte(formatted))
 }
 
+// Printf sends a log event using debug level and no extra field.
 func (l *defaultLogger) Printf(msg string, args ...any) { l.log(LevelDebug, msg, args...) }
+
+// Errorf sends a log event using error level and no extra field.
 func (l *defaultLogger) Errorf(msg string, args ...any) { l.log(LevelError, msg, args...) }
