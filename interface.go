@@ -1,6 +1,6 @@
 package qlog
 
 type Logger interface {
-	Debugf(msg string, a ...any)
-	Errorf(msg string, a ...any)
+	Debugf(msg string, args ...any)
+	Errorf(msg string, args ...any)
 }
