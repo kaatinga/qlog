@@ -40,5 +40,5 @@ func (l *defaultLogger) log(lvl level, msg string, args ...any) {
 	output.Write([]byte(formatted))
 }
 
-func (l *defaultLogger) Debugf(msg string, args ...any) { l.log(LevelDebug, msg, args...) }
+func (l *defaultLogger) Printf(msg string, args ...any) { l.log(LevelDebug, msg, args...) }
 func (l *defaultLogger) Errorf(msg string, args ...any) { l.log(LevelError, msg, args...) }
